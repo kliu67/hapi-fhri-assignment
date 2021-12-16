@@ -41,7 +41,7 @@ public class SampleClient {
         System.out.println("exit");
    
     }
-    
+    //BASIC TASKS
     public static void sortPatients(List<Patient> patients) {  //Sorts a list of `Patient` by Given Name
     	System.out.println("sorting patients");
     	Collections.sort(patients, new Comparator<Patient>() {  //Compares patient elements by the given name field
