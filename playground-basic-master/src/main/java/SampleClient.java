@@ -28,6 +28,8 @@ public class SampleClient {
         int numberOfRuns = 0; 
         //counter for number of loops to run
         int loopCounter = Integer.valueOf(theArgs[0]);
+        //path of .txt file
+        String path = theArgs[1].toString();
         //toggles cache-control for the httprequest
         boolean cacheOff = false;
         //open a file containing a list of family names
@@ -36,7 +38,7 @@ public class SampleClient {
         	System.out.println("Searching...");
         	try {
         		//opens a .txt file containing family names
-            	Scanner scanner = new Scanner(new File("src\\main\\java\\FamilyNames.txt"));
+            	Scanner scanner = new Scanner(new File(path));
             	//repeats the search n number of times, n = loopCounter
     			while (scanner.hasNextLine()) {
     				//list to holder the search result
@@ -59,11 +61,11 @@ public class SampleClient {
     				numberOfRuns++;
     				
     				//uncomment below to store the search result in an arralist, perform sort, and print the patient names to console
-//    				for(int i = 0; i < re.getEntry().size(); i++) {
-//    					pList.add((Patient)re.getEntry().get(i).getResource());
-//    				}
-//    				sortPatient(pList);
-//    				printPatient(pList);
+    				for(int i = 0; i < re.getEntry().size(); i++) {
+    					pList.add((Patient)re.getEntry().get(i).getResource());
+    				}
+    				sortPatient(pList);
+    				printPatient(pList);
     				
     			}
     			scanner.close();
